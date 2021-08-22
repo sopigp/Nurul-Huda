@@ -17,12 +17,14 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Create - Data Santri</h4>
+                                <h4 class="card-title">Detil - Data Santri</h4>
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form action="{{url('/administratorx_santri/store')}}" method="post" enctype="multipart/form-data">
+                                    <form action="{{url('/administratorx_santri/update')}}/{{$santri->id_santri}}" method="post" enctype="multipart/form-data">
                                         {{ csrf_field() }}
+
+                                        {{ method_field('PUT') }}
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="form-group row">
@@ -30,7 +32,7 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="nama_lengkap" placeholder="" required="required" value="{{ old('nama_lengkap') }}">
+                                                        <input type="text" class="form-control" name="nama_lengkap" placeholder="" required="required" value="{{$santri->nama_lengkap}}">
                                                     </div>
                                                 </div>
                                                  <div class="form-group row">
@@ -38,7 +40,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="tempat_lahir" placeholder="" required="required" value="{{ old('tempat_lahir') }}">
+                                                        <input type="text" class="form-control" name="tempat_lahir" placeholder="" required="required" value="{{$santri->tempat_lahir}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -46,7 +48,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="date" class="form-control" name="dob" placeholder="" required="required" value="{{ old('dob') }}">
+                                                        <input type="date" class="form-control" name="dob" placeholder="" required="required" value="{{$santri->dob}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -54,7 +56,7 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="jenis_kelamin" placeholder="" required="required" value="{{ old('jenis_kelamin') }}">
+                                                        <input type="text" class="form-control" name="jenis_kelamin" placeholder="" required="required" value="{{$santri->jenis_kelamin}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -62,7 +64,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="number" class="form-control" name="no_kk" placeholder="" required="required" value="{{ old('no_kk') }}">
+                                                        <input type="number" class="form-control" name="no_kk" placeholder="" required="required" value="{{$santri->no_kk}}">
                                                     </div>
                                                 </div>
                                                  <div class="form-group row">
@@ -70,7 +72,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="number" class="form-control"  name="nik" placeholder="" required="required" value="{{ old('nik') }}">
+                                                        <input type="number" class="form-control"  name="nik" placeholder="" required="required" value="{{$santri->nik}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -78,7 +80,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="nama_ibu" placeholder="" required="required" value="{{ old('nama_ibu') }}">
+                                                        <input type="text" class="form-control" name="nama_ibu" placeholder="" required="required" value="{{$santri->nama_ibu}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,7 +90,7 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="nama_ayah" placeholder="" required="required" value="{{ old('nama_ayah') }}">
+                                                        <input type="text" class="form-control" name="nama_ayah" placeholder="" required="required" value="{{$santri->nama_ayah}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -96,7 +98,7 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="number" class="form-control" name="anak_ke" placeholder="" required="required" value="{{ old('anak_ke') }}">
+                                                        <input type="number" class="form-control" name="anak_ke" placeholder="" required="required" value="{{$santri->anak_ke}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -104,7 +106,7 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="number" class="form-control" name="jumlah_anak" placeholder="" required="required" value="{{ old('jumlah_anak') }}">
+                                                        <input type="number" class="form-control" name="jumlah_anak" placeholder="" required="required" value="{{$santri->jumlah_anak}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -112,7 +114,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="alamat" placeholder="" required="required" value="{{ old('alamat') }}">
+                                                        <input type="text" class="form-control" name="alamat" placeholder="" required="required" value="{{$santri->alamat}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -120,7 +122,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" class="form-control" name="file_kk" placeholder="" required="required" value="{{ old('file_kk') }}">
+                                                        <input type="file" class="form-control" name="file_kk" placeholder="" value="{{$santri->file_name_kk}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -128,12 +130,13 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" class="form-control"name="file_ktp" placeholder="" required="required" value="{{ old('file_ktp') }}">
+                                                        <input type="file" class="form-control"name="file_ktp" placeholder="" value="{{$santri->file_name_ktp}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-lg-8 ml-auto">
                                                         <button type='submit' value="Upload" class="btn btn-primary">Submit</button>
+                                                        <a href="{{url('/administratorx_santri')}}" class="btn btn-danger">Kembali</a>
                                                     </div>
                                                 </div>
                                             </div>

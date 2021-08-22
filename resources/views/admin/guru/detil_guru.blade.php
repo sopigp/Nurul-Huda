@@ -17,12 +17,11 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Create - Data Santri</h4>
+                                <h4 class="card-title">Detil - Data Guru</h4>
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form action="{{url('/administratorx_santri/store')}}" method="post" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
+                                    <form action="" method="" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="form-group row">
@@ -30,7 +29,7 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="nama_lengkap" placeholder="" required="required" value="{{ old('nama_lengkap') }}">
+                                                        <input type="text" class="form-control" name="nama_lengkap" placeholder="" value="{{$guru->nama_lengkap}}">
                                                     </div>
                                                 </div>
                                                  <div class="form-group row">
@@ -38,7 +37,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="tempat_lahir" placeholder="" required="required" value="{{ old('tempat_lahir') }}">
+                                                        <input type="text" class="form-control" name="tempat_lahir" placeholder="" value="{{$guru->tempat_lahir}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -46,94 +45,110 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="date" class="form-control" name="dob" placeholder="" required="required" value="{{ old('dob') }}">
+                                                        <input type="date" class="form-control" name="dob" placeholder="" value="{{$guru->dob}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label">Jenis Kelamin
-                                                        <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="jenis_kelamin" placeholder="" required="required" value="{{ old('jenis_kelamin') }}">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label">Nomor Kartu Keluarga <span
+                                                    <label class="col-lg-4 col-form-label">Jenis Kelamin <span
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="number" class="form-control" name="no_kk" placeholder="" required="required" value="{{ old('no_kk') }}">
+                                                        <input type="text" class="form-control" name="jenis_kelamin" placeholder="" value="{{$guru->jenis_kelamin}}">
                                                     </div>
                                                 </div>
-                                                 <div class="form-group row">
+                                                <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label">NIK <span
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="number" class="form-control"  name="nik" placeholder="" required="required" value="{{ old('nik') }}">
+                                                        <input type="number" class="form-control"  name="nik" placeholder="" value="{{$guru->nik}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label">Nama Ibu <span
+                                                    <label class="col-lg-4 col-form-label">Nomor Kartu Keluarga
+                                                        <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="number" class="form-control" name="no_kk" placeholder="" value="{{$guru->no_kk}}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label">Nomor NPWP <span
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="nama_ibu" placeholder="" required="required" value="{{ old('nama_ibu') }}">
+                                                        <input type="number" class="form-control" name="no_npwp" placeholder="" value="{{$guru->no_npwp}}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label">Pendidikan <span
+                                                            class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control"  name="pendidikan" placeholder="" value="{{$guru->pendidikan}}">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label">Nama Ayah
+                                                    <label class="col-lg-4 col-form-label" >Tanggal Masuk Kerja
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="nama_ayah" placeholder="" required="required" value="{{ old('nama_ayah') }}">
+                                                        <input type="date" class="form-control"  name="tgl_masuk_kerja" placeholder="" value="{{$guru->tgl_masuk_kerja}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label">Anak Ke-
+                                                    <label class="col-lg-4 col-form-label">Alamat
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="number" class="form-control" name="anak_ke" placeholder="" required="required" value="{{ old('anak_ke') }}">
+                                                        <input type="text" class="form-control" name="alamat" placeholder="" value="{{$guru->alamat}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label">Jumlah Anak
+                                                    <label class="col-lg-4 col-form-label">File Kartu Keluarga
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="number" class="form-control" name="jumlah_anak" placeholder="" required="required" value="{{ old('jumlah_anak') }}">
+                                                        <input type="file" class="form-control" name="file_kk" placeholder="" value="{{$guru->file_name_kk}}">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label">Alamat <span
+                                               <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="file_ktp">File KTP <span
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" name="alamat" placeholder="" required="required" value="{{ old('alamat') }}">
+                                                        <input type="file" class="form-control" id="file_ktp" name="file_ktp" placeholder="" value="{{$guru->file_name_ktp}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label">File Kartu Keluarga <span
+                                                    <label class="col-lg-4 col-form-label">File NPWP <span
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" class="form-control" name="file_kk" placeholder="" required="required" value="{{ old('file_kk') }}">
+                                                        <input type="file" class="form-control" name="file_npwp" placeholder="" value="{{$guru->file_name_npwp}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label">File KTP
+                                                    <label class="col-lg-4 col-form-label">File TTD
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" class="form-control"name="file_ktp" placeholder="" required="required" value="{{ old('file_ktp') }}">
+                                                        <input type="file" class="form-control" name="file_ttd" placeholder="" value="{{$guru->file_name_ttd}}">
+                                                    </div>
+                                                </div>
+                                                  <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label">Note
+                                                        <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" name="note" placeholder="" required="required" value="{{$guru->note}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-lg-8 ml-auto">
-                                                        <button type='submit' value="Upload" class="btn btn-primary">Submit</button>
+                                                        <a href="{{url('/administratorx_guru')}}" class="btn btn-primary">Kembali</a>
                                                     </div>
                                                 </div>
                                             </div>

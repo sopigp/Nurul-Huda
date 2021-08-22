@@ -10,6 +10,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{url('/admin/images/favicon.png')}}">
     <link href="{{url('/admin/vendor/jqvmap/css/jqvmap.min.css')}}" rel="stylesheet">
 	<link rel="stylesheet" href="{{url('/admin/vendor/chartist/css/chartist.min.css')}}">
+     <!-- Custom Stylesheet -->
+    <link href="{{url('/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
+    <link href="{{url('/admin/css/style.css')}}" rel="stylesheet">
 	 <!-- Datatable -->
     <link href="{{url('/admin/vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
 	<!-- Vectormap -->
@@ -165,6 +168,11 @@
 	
 	<!-- Dashboard 1 -->
 	<script src="{{url('/admin/js/dashboard/dashboard-1.js')}}"></script>
+
+    <!-- Jquery Validation -->
+    <script src="{{url('/admin/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
+    <!-- Form validate init -->
+    <script src="{{url('/admin/js/plugins-init/jquery.validate-init.js')}}"></script>
 	
 </body>
 </html>
